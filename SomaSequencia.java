@@ -16,20 +16,15 @@ public class SomaSequencia {
 
     }
 
-    static int soma (int inicial, int n) {
+    static int soma (int n) {
 
         if (n == 1) {
-            
-            return 1;
-
-        } else {
-
-            if () {
-                
-            }
-            return inicial + soma (inicial, n);
+		          return 1;
+	         else
+	          	return n + soma (n - 1);		
         }
 
     }
 
 }
+
