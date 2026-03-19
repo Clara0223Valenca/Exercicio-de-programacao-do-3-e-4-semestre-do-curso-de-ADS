@@ -1,0 +1,31 @@
+package recursividade;
+/*3. Implemente um método recursivo que retorne a soma de todos os números naturais de 1 até n.
+ 05/03/2026 */
+
+import java.util.*;
+
+public class SomaSequencia {
+    
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite até qual número deseja soma");
+        int n = scanner.nextInt();
+
+        System.out.println(soma(n));
+
+    }
+
+    static int soma (int n) {
+
+        if (n == 1) {
+		        return 1;
+        }else{
+	          	return n + soma (n - 1);		
+        }
+
+    }
+
+}
+

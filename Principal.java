@@ -2,7 +2,7 @@ public class Principal {
 
     public static void main(String[] args) {
         
-        Carro carro1 = new Carro();
+        ClasseCarro carro1 = new ClasseCarro();
 
         carro1.cor = "vermelho";
         carro1.marca = "Chevrolet";
@@ -10,7 +10,7 @@ public class Principal {
         carro1.acelerar();
         carro1.dados();
 
-        Carro carro2 = new Carro();
+        ClasseCarro carro2 = new ClasseCarro();
 
         carro2.cor = "preto";
         carro2.marca = "Corolla";
