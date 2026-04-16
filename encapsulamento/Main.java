@@ -45,6 +45,17 @@ public class Main {
         // System.out.println("O número de eventos registrado no contador é: " + eventCounter.getValue());
 
         
-        
+        Employee employee1 = new Employee("José", "Calvalcante", 1800.0);
+
+        System.out.println("O funcionário " + employee1.getFirstName() + " " + employee1.getLastName() + " recebe mensalmente R$" + employee1.getMonthlySalary());
+
+        employee1.annualSalary();
+
+        employee1.tenPercentIncrease();
+
+        System.out.print("Agora o salário mensal  é" + employee1.getMonthlySalary() + " e o salário anual é ");
+        employee1.annualSalary();
+
+
     }
 }
