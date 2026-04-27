@@ -13,7 +13,7 @@ public class Product {
 
     public double getPrice(){
 
-        return name;
+        return price;
     }
 
     public void applyDiscount(double percentagem){
