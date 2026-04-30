@@ -18,14 +18,14 @@ public class Employee extends Person {
     }
 
     // retorna 60% do salário
-    public double getSalarioPrimeiraParcela(){
+    public double getSalarioFirstInstallment (){
 
         return salary * 0.6;
     }
 
 
     // retorna 40% do salário
-    public double getSalarioSegundaParcela(){
+    public double getSalarioSecondInstallment (){
 
         return salary * 0.4;
     }
