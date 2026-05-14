@@ -7,8 +7,8 @@ public class BankAccount {
     
     private double balance;
     
-    public double displayBalance() {
-        return balance;
+    public void displayBalance() {
+        System.out.println("Saldo atual: R$ " + balance);
     }
     
     public void deposit(double value){
@@ -49,7 +49,7 @@ public class BankAccount {
 
         if (value > balance) {
 
-            System.out.println("Não é possível realizar o sacar valor maior que seu saldo");
+            System.out.println("Não é possível sacar um valor maior que seu saldo");
             return false; 
         } else {
 
