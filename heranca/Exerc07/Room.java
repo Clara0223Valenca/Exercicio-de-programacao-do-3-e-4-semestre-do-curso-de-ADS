@@ -16,4 +16,17 @@ public class Room {
 
         
     }
+
+    public int getRoomNumber() {
+        return roomNumber;
+    }
+
+    public double getValueDailyRate() {
+        return valueDailyRate;
+    }
+
+    public boolean occupied(){
+
+        return occupied;
+    }
 }
