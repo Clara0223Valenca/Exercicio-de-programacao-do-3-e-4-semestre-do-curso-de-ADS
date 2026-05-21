@@ -5,4 +5,15 @@ package Exerc07;
 public class Room {
     
     private int roomNumber;
+    private double valueDailyRate;
+    private boolean occupied;
+
+    public Room(int roomNumber, double valueDailyRate, boolean occupied) {
+
+        this.roomNumber = roomNumber;
+        this.valueDailyRate = valueDailyRate;
+        this.occupied = occupied;
+
+        
+    }
 }
