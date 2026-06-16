@@ -7,9 +7,9 @@ public class Main {
 
         Cat Marry = new Cat();
 
-        Beethoven.emitirSom();
+        Beethoven.makeSound();
 
-        Marry.emitirSom();
+        Marry.makeSound();
 
 
 

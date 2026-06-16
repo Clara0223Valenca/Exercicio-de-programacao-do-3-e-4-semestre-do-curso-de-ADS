@@ -3,7 +3,7 @@ package Notification;
 Crie uma classe base chamada Notificacao com um método público enviar(String mensagem). Esse método deve apenas imprimir "Enviando notificação genérica: [mensagem]".
 Crie uma subclasse chamada NotificacaoSMS que herda de Notificacao. Modifique o comportamento do método enviar para que imprima "Enviando SMS: [mensagem]".
 Crie outra subclasse chamada NotificacaoEmail que herda de Notificacao. Modifique o comportamento do método enviar para que imprima "Enviando E-mail com criptografia: [mensagem]".
- */
+08/06/2026*/
 
 public class Notification {
 

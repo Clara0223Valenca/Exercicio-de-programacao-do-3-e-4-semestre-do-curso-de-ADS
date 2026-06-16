@@ -5,7 +5,7 @@ Implemente o método calcular de três formas diferentes (na mesma classe):
 Para um Quadrado: recebe um único valor double (lado) e retorna a área (lado * lado).
 Para um Retângulo: recebe dois valores double (base e altura) e retorna a área (base * altura).
 Para um Círculo: recebe um valor double (raio) e um boolean indicando true (apenas para diferenciar a assinatura), retornando a área (  *raio² ). Dica: use Math.PI.
-
+08/06/2026
  */
 public class AreaCalculator {
 

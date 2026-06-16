@@ -5,7 +5,7 @@ Adicione o método emitirSom() nas subclasses, utilizando a anotação @Override
 public class Dog extends Animal{
     
     @Override
-    public void emitirSom() {
+    public void makeSound() {
 
         System.out.println("Au au!");
     }
