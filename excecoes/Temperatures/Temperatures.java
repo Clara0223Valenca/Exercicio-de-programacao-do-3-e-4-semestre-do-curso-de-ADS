@@ -7,52 +7,36 @@ c) No método principal, instancie o objeto e chame os métodos correspondentes 
 
 public class Temperatures {
 
-    private double temp;
     private double result;
-
-    public double getTemp() {
-        return temp;
-    }
 
     public double getResult() {
         return result;
     }
-    public void setTemp(double temp) {
-        this.temp = temp;
-    }
-
+    
     public void setResult(double result) {
         this.result = result;
     }
 
     public void convertsToCelsius(double temp) throws Exception{
 
-        if (temp < -459.67) {
-            
-             throw new Exception( "o valor a ser convertido não pode ser menor que zero absoluto (-459,67°F)");
-        } else{
+        if (temp <= -459.67) {
 
-            result = (temp - 32) * 5 / 9 ; 
-            System.out.println(temp + "ºC equivale a " + result + "ºC");
-        } 
-
-
+                throw new Exception( "o valor a ser convertido não pode ser menor que zero absoluto (-459,67°F)");
+        }        
+              
+                result = (temp - 32) * 5 / 9 ;      
+      
     }
 
     public void convertsToFahrenheit(double temp) throws Exception{
 
-        if (temp < -273.15) {
+        if (temp <= -273.15){
             
-             throw new Exception( "o valor a ser convertido não pode ser menor que zero absoluto (-273,15ºC)");
-        } else{
-
-            result = (temp * 1.8) + 32; 
-            System.out.println(temp + "ºC equivale a " + result + "ºF");
-        } 
-
-
+                throw new Exception( "o valor a ser convertido não pode ser menor que zero absoluto (-273,15ºC)");
+        }
+        
+                result = (temp * 1.8) + 32; 
+                
     }
-
-    
     
 }

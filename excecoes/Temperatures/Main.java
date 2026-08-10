@@ -13,34 +13,38 @@ public class Main {
         int opt = sc.nextInt();
 
         System.out.println("Digite a temperatura a ser convertida");
-        temp = sc.nextInt();
+        temp = sc.nextDouble();
    
+      
         if (opt == 1) {
-             
             try {
-                temperatures.convertsToCelsius(temp);
-                temperatures.getResult();
+
+                    temperatures.convertsToCelsius(temp);
+                    System.out.println(temp + "ºC equivale a " + temperatures.getResult() + "ºC");
             } catch (Exception e) {
 
-                System.out.println("Falha: " + e.getMessage());
+                    System.out.println("Falha: " + e.getMessage());
+
             }
         }
 
-        
         if (opt == 2) {
-             
             try {
-                temperatures.convertsToFahrenheit(temp);
-                temperatures.getResult();
+                
+                    temperatures.convertsToFahrenheit(temp);
+                    System.out.println(temp + "ºC equivale a " + temperatures.getResult() + "ºF");
+
+                
             } catch (Exception e) {
 
-                System.out.println("Falha: " + e.getMessage());
+                    System.out.println("Falha: " + e.getMessage());
+                
             }
         }
 
-        if (opt != 1 || opt != 2) {
+        // if (opt != 1 && opt != 2) {
             
-            System.out.println("Opção inválida");
-        }
+        //     System.out.println("Opção inválida");
+        // }
     }
 }
