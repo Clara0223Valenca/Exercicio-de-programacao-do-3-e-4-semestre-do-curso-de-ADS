@@ -3,6 +3,8 @@ package Temperatures;
 a) Crie uma classe com dois métodos que permitam a conversão de temperaturas de Celsius para Fahrenheit e vice-versa.
 b) Cada método deverá receber as temperaturas de origem em double, porém caso o valor a ser convertido seja menor que zero absoluto (-459,67°F ou -273,15ºC) deve-se lançar uma exceção informando que o valor informado está abaixo do zero absoluto. 
 c) No método principal, instancie o objeto e chame os métodos correspondentes informando valores diferentes para testar.
+
+04/08/2026
 */
 
 public class Temperatures {
