@@ -14,9 +14,12 @@ public class Main {
 
         cDAO.Read();
 
-        cDAO.Update(2, "Vitória", "666666");
+        // cDAO.Update(2, "Vitória", "666666");
 
    
+        cDAO.Delete(2);
+
+        cDAO.Read();
 
     }
 }

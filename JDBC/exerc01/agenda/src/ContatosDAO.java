@@ -87,7 +87,27 @@ public class ContatosDAO {
 
     //apagar
     public void Delete(int id){
-        
+        String sql = "DELETE FROM contatos"
+        + "WHERE id = ?";
+
+        try {
+            Connection con = connectionDB.connect();
+            PreparedStatement ps = con.prepareStatement(sql);
+          
+            ps.setInt(1,id);
+            int affectedLines = ps.executeUpdate();
+
+            if ( affectedLines > 0) {
+                
+                System.out.println("Contato deletado");
+            } else {
+                System.out.println("\n Nenhum contato encontrado com o id informado!");
+            }
+
+        } catch(SQLException e) {
+            
+            System.out.println("Falha na operação deletar");
+        }
     }
 
 }
