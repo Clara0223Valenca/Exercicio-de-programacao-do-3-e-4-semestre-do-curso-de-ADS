@@ -13,4 +13,5 @@ public abstract class Payment {
     public void setTotalValue(double totalValue) {
         this.totalValue = totalValue;
     }
+
 }

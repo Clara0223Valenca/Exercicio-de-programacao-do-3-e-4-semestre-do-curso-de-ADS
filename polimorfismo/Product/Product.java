@@ -3,13 +3,13 @@ Crie duas classes filhas de “Produto”, que serão “Mouse” com o atributo
 Crie uma classe “Main” que irá simular a compra de um cliente de vários mouses e livros, deve haver apenas um vetor/ArrayList na classe “Main” para armazenamento de todos os livros e mouses. Esse vetor/ArrayList deve se chamar “carrinho” que simula o carrinho de compras de produtos variados de um cliente em um e-commerce. Insira nesse “carrinho” vários mouses e livros e depois chame o método “getDescricao” de todos os objetos presentes no vetor/ArrayList. Para o usuário do carrinho saber as informações dos produtos em seu carrinho.
 15/06/2026 */
 
-package Product;
+
 
 public class Product {
     
     private String storeName;
     private double price;
-    private String descricao;
+    protected String description;
 
 
     public String getStoreName(){
@@ -22,14 +22,9 @@ public class Product {
         return price;
     }
 
-    public String getDescricao(){
+    public String getDescription(){
 
         return "Produto de informática";
-    }
-
-    public String getDescricao(String descricao){
-
-        return descricao;
     }
 
     public void setStoreName(String storeName) {
