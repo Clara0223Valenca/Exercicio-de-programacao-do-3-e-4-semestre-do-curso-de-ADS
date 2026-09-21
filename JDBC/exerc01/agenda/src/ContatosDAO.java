@@ -26,6 +26,7 @@ public class ContatosDAO {
             
         } catch (Exception e) {
             
+            
             System.out.println("Cadastro de contato falhou.");
         }
     }
