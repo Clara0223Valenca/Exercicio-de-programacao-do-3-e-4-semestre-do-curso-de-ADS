@@ -7,25 +7,25 @@ public class ConnectionDB {
     private String base = "agenda";
     private String user = "root";
     private String password = "";
-    private String url = "jdbc:mysql://localhost:3306/" + base; 
+    private String url = "jdbc:mysql://localhost:3307/" + base; 
 
     //makes connection
     public Connection connect(){
         
-        // try {
-        //     return DriverManager.getConnection(url, user, password);
-        // } catch (SQLException e) {
-
-        //     throw new RuntimeException("A conexão com o banco falhou");
-        // }
-
         try {
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/agenda", "root", "");
+            return DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
 
             throw new RuntimeException("A conexão com o banco falhou");
         }
 
+        /* try {
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/agenda", "root", "");
+        } catch (SQLException e) {
+
+            throw new RuntimeException("A conexão com o banco falhou");
+        }
+ */
 
     }
 }

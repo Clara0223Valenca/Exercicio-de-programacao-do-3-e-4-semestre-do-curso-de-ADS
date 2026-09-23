@@ -1,5 +1,4 @@
 //01/09/2026
-//id (int), nome (String), preco (double) e quantidade (int).
 
 public class Product {
     
@@ -57,7 +56,7 @@ public class Product {
     public void display(){
 
         System.out.println(
-            "Informações do produto📝"+
+            "\n===  Informações do produto  ==="+
             "\nID: " + id +
             "\nNome: " + name +
             "\nPreço: " + price +

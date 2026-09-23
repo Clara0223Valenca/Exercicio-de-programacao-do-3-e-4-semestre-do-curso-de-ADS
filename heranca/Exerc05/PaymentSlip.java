@@ -4,6 +4,12 @@ public class PaymentSlip extends Payment {
     
     private String barcode;
 
+    public PaymentSlip (double totalValue, String barcode){
+
+        setTotalValue(totalValue);
+        this.barcode = barcode;
+    }
+
     @Override
     public void processPayment(){
 

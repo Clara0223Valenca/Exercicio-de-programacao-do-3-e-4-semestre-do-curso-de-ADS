@@ -1,67 +1,110 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-// import java.sql.ResultSet;
-// import java.sql.SQLException;
-// import java.util.ArrayList;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ProductDAO {
 
-    private ConnectionDB connectionDB = new ConnectionDB();
+    private final ConnectionDB connectionDB = new ConnectionDB();
 
     public void create(Product product) {
+        String sql = "INSERT INTO product (name, price, quantity) VALUES (?, ?, ?)";
 
-        String sql = "INSERT INTO product(name, price, quantity) VALUES (?, ?, ?)";
-        // 1 /2 /3
-        try {
+        try (
+            Connection connection = connectionDB.connect();
+            PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, product.getName());
+            statement.setDouble(2, product.getPrice());
+            statement.setInt(3, product.getQuantity());
 
-            Connection conDB = connectionDB.connect();
-            PreparedStatement ps = conDB.prepareStatement(sql);
+            int affectedRows = statement.executeUpdate();
 
-            ps.setString(1, product.getName());
-            ps.setDouble(2, product.getPrice());
-            ps.setInt(3, product.getQuantity());
-            ps.execute();
-
-            System.out.println("Item cadastrado no estoque");
-
-        } catch (Exception e) {
-
+            if (affectedRows > 0) {
+                System.out.println("Item cadastrado no estoque.");
+            }
+        } catch (SQLException e) {
             System.out.println("Cadastro de item no estoque falhou.");
         }
     }
 
-    // public ArrayList<Product> readByName(String name) {
+    public ArrayList<Product> searchByName(String searchTerm) {
+        String sql = "SELECT id, name, price, quantity FROM product WHERE name LIKE ?";
 
-    //     String sql = "SELECT * FROM store_inventory";
+        ArrayList<Product> products = new ArrayList<>();
 
-    //     try {
-    //         Connection con = connectionDB.connect();
-    //         PreparedStatement ps = con.prepareStatement(sql);
-    //         ResultSet result = ps.executeQuery();
+        try (
+            Connection connection = connectionDB.connect();
+            PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, "%" + searchTerm + "%");
 
-    //         while (result.next()) {
+            try (ResultSet result = statement.executeQuery()) {
+                while (result.next()) {
+                    int id = result.getInt("id");
+                    String name = result.getString("name");
+                    double price = result.getDouble("price");
+                    int quantity = result.getInt("quantity");
 
-    //             int id = result.getInt(1);
-    //             String name = result.getString(2);
-    //             String telephone = result.getString(3);
-    //             System.out.println(
-    //                     "ID: " + id + " | " +
-    //                             "NOME: " + name + " | " +
-    //                             "TELEFONE: " + telephone
+                    Product product = new Product(id, name, price, quantity);
 
-    //             );
-    //         }
+                    products.add(product);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Falha ao buscar produtos no banco de dados.");
+        }
 
-    //     } catch (SQLException e) {
-    //         System.out.println("Falha na leitura do banco.");
-    //     }
-    // }
+        return products;
+    }
 
-    // public boolean updateInventory(int id, int newQuantity) {
+    public boolean updateInventory(int id, int newQuantity) {
 
-    // }
+        String sql = "UPDATE product SET quantity = ? WHERE id = ?";
 
-    // publicboolean delete(int id) {
+        try {
+            Connection con = connectionDB.connect();
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, newQuantity);
+            ps.setInt(2, id);
+            int affectedLines = ps.executeUpdate(); //retorna o número de linhas afetadas
+            
+            if (affectedLines > 0) {
+                return true;
 
-    // }
+            } else {
+                return false;
+
+            }
+
+        } catch (SQLException e) {
+            return false;
+
+        }
+    }
+
+    public boolean delete(int id) {
+
+         String sql = "DELETE FROM product WHERE id = ?";
+
+        try {
+            Connection con = connectionDB.connect();
+            PreparedStatement ps = con.prepareStatement(sql);
+          
+            ps.setInt(1,id);
+            int affectedLines = ps.executeUpdate();
+
+            if ( affectedLines > 0) {
+                return true;
+
+            } else {
+                return false;
+
+            }
+
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+
+        }
+    }
 }
