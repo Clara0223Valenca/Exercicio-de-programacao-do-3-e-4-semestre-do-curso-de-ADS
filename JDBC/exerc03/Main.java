@@ -16,7 +16,7 @@ public class Main {
             
             System.out.println("---------- CAFETERIA ----------" +
                 "\n 1 - Registrar venda" +
-                "\n 2 - Listar vendas " +
+                "\n 2 - Fechar caixa" +
                 "\n 3 - Total de itens vendidos" +
                 "\n 4 - Sair"
             );
@@ -27,19 +27,28 @@ public class Main {
                 case 1:
                     
                     System.out.println("Digite o nome do produto");
-                    name = sc.nextLine();
-                    sc.nextLine();
+                    name = sc.next();
+            
                     System.out.println("Digite a quantidade de " + name + ":");
                     quantity = sc.nextInt();
 
                     cs.Sale(name, quantity);
 
+                //   for (String prod : cs.listProducts) {
+                   
+                //            System.out.println(prod);
+                    
+                //   }
+
                     break;
 
                 case 2:
 
-                    cs.writerFile(file);
+                    cs.closeTheRegister(file);
                     break;
+
+                case 3:
+                    cs.showTotalSold(file);
             
                 default:
                     break;

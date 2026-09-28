@@ -1,1 +1,4 @@
- ; 3
+Item | Quantidade
+pao;2
+suco;2
+bolo;6
