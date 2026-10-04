@@ -1,10 +1,15 @@
 public class App {
     public static void main(String[] args) throws Exception {
          
-        Conexao con = new Conexao();
+       /*  ConnectionDB con = new ConnectionDB();
 
-        con.conectar();
-        System.out.println("Feito!!");
+        con.connect();
+        System.out.println("Feito!!"); */
 
+        Sale online_store = new Sale();
+
+        online_store.readSQLAndWriteCSV();
+
+        online_store.readCSV();
     }
 }
