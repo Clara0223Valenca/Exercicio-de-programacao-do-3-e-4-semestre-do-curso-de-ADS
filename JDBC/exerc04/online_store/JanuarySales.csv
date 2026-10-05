@@ -1,7 +1,7 @@
 ID Venda,Produto,Quantidade,PrecoUnitario,DataVenda
 1,Monitor LED 24",5,350.99,2024-01-05
-2,Teclado Mecânico RGB,10,89.5,2024-01-15
-3,Mousepad XL,25,19.9,2024-01-01
-4,Webcam HD Compacta,8,120.0,2024-01-29
-5,Teclado Mecânico RGB,3,89.5,2024-01-05
-6,Mousepad XL,12,19.9,2024-01-10
+2,Teclado Mecânico RGB,10,89.50,2024-01-15
+3,Mousepad XL,25,19.90,2024-01-01
+4,Webcam HD Compacta,8,120.00,2024-01-29
+5,Teclado Mecânico RGB,3,89.50,2024-01-05
+6,Mousepad XL,12,19.90,2024-01-10

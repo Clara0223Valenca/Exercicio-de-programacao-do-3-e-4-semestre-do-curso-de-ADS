@@ -32,11 +32,21 @@ public class Sale {
 
                 int idVenda = result.getInt(1);
                 String product = result.getString(2);
-                int quantity = result.getInt(3);
+                int quantity = result.getInt(3); 
                 double unitPrice = result.getDouble(4);
                 String saleDate = result.getString(5);
 
                 String formatLine = idVenda + "," + product + "," + quantity + "," + unitPrice + "," + saleDate;
+
+                //Poderia ser também, porque nesse caso não precisa converter, do banco vem string no csv vai ser string, não faremos calculos:
+                
+                // String formatLine =  result.getString(1) + "," +
+                // result.getString(2) + "," +
+                // result.getString(3) + "," +
+                // result.getString(4) + "," +
+                // result.getString(5) + "\n";
+                
+                //se tiver só números mas for varchar, pode usar getInt que vai converter
 
                 bw.write(formatLine);
                 bw.newLine();
@@ -46,7 +56,7 @@ public class Sale {
             bw.close();
 
             
-         } catch (SQLException e) {
+        } catch (SQLException e) {
 
             System.out.println("Falha ao ler banco de dados.");
 

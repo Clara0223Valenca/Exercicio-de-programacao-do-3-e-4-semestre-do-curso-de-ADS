@@ -8,7 +8,7 @@ public class ConnectionDB {
     private String base = "loja_vendas";
     private String user = "root";
     private String password = "";
-    private String url = "jdbc:mysql://localhost:3307/" + base; 
+    private String url = "jdbc:mysql://localhost:3306/" + base; 
 
     //makes connection
     public Connection connect(){
