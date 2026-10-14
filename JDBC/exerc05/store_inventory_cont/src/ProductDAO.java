@@ -9,7 +9,7 @@ public class ProductDAO {
     private final ConnectionDB connectionDB = new ConnectionDB();
 
     public void create(Product product) {
-        String sql = "INSERT INTO product (name, price, quantity) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO product(name, price, quantity) VALUES (?, ?, ?)";
 
         try (
             Connection connection = connectionDB.connect();
@@ -31,7 +31,7 @@ public class ProductDAO {
     public ArrayList<Product> searchByName(String searchTerm) {
         String sql = "SELECT id, name, price, quantity FROM product WHERE name LIKE ?";
 
-        ArrayList<Product> products = new ArrayList<>();
+        ArrayList<Product> products =  new ArrayList<>();
 
         try (
             Connection connection = connectionDB.connect();

@@ -4,16 +4,16 @@ import java.sql.SQLException;
 
 public class ConnectionDB {
 
-    private String base = "store_inventory";
-        private String user = "root";
-        private String password = "";
-        private String url = "jdbc:mysql://localhost:3306/" + base;
+    //     private String base = "store_inventory";
+    //     private String user = "root";
+    //     private String password = "";
+    //     private String url = "jdbc:mysql://localhost:3306/" + base;
 
     // makes connection
     public Connection connect() {
 
         try {
-            return DriverManager.getConnection(url, user, password);
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/store_inventory", "root", "");
         } catch (SQLException e) {
 
             throw new RuntimeException("A conexão com o banco falhou");

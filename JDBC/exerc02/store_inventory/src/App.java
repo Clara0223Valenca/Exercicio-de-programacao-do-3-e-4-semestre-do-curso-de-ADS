@@ -3,14 +3,14 @@
 public class App {
     public static void main(String[] args){
 
-        // ConnectionDB conDB = new ConnectionDB();
-        // conDB.connect();
-        // System.out.println("Feito!!");
+        ConnectionDB conDB = new ConnectionDB();
+        conDB.connect();
+        System.out.println("Feito!!");
 
-        // ProductDAO pDAO = new ProductDAO();
+        ProductDAO pDAO = new ProductDAO();
 
 
-        // pDAO.create(new Product("Blusa", 200.00, 3));
+        pDAO.create(new Product("Blusa", 200.00, 3));
     }
 
 }
