@@ -9,59 +9,36 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Report {
 
-     private String csvFullReport = "fullReport.csv";
+    //evita redundância de código pois a única mudança é CSV
 
-    private ConnectionDB connectionDB = new ConnectionDB();
+    public void fullReport (String header, ArrayList<String> listProducts){
+        report(header, listProducts, "fullReport.csv");
+    }
     
+    public void reportByQuantity(String header, ArrayList<String> listProducts){
+        report(header, listProducts, "reportByQuantity.csv");
+    }
     
-    public void fullReport(){
-        //ler do banco
-        //gravar no csv
-        String sql = "SELECT id, name, price, quantity"
-                + "FROM products";
+    private void report(String header, ArrayList<String> listProducts, String csv){
 
-        try {
-            Connection con = connectionDB.connect();
-            PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet result = ps.executeQuery();
-
-            BufferedWriter bw = new BufferedWriter(new FileWriter(csvFullReport));
-
-            bw.write("ID, Name, Price, Quantity");
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(csv, false))){
+          
+            
+            bw.write(header);
             bw.newLine();
 
-            while (result.next()) {
+            for (String product : listProducts) {
 
-                int id = result.getInt(1);
-                String name = result.getString(2);
-                double price = result.getDouble(3); 
-                int quantity = result.getInt(4);
-             
-                String formatLine = id+ "," + name + "," + price + "," + quantity;
-
-                //Poderia ser tudo getString também, porque nesse caso não precisa converter, do banco vem string no csv vai ser string, não faremos calculos:
-
-                
-                //se tiver só números mas for varchar, pode usar getInt que vai converter
-
-                bw.write(formatLine);
+                bw.write(product);
                 bw.newLine();
             }
 
             System.out.println("\nRelatório gerado com sucesso!\n");
-            bw.close();
-
-            
-        } catch (SQLException e) {
-
-            System.out.println("Falha ao ler banco de dados.");
+        
 
         } catch (IOException e) {
 

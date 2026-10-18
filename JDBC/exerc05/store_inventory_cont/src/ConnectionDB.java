@@ -13,7 +13,7 @@ public class ConnectionDB {
     public Connection connect() {
 
         try {
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/store_inventory", "root", "");
+            return DriverManager.getConnection("jdbc:mysql://localhost:3307/store_inventory", "root", "");
         } catch (SQLException e) {
 
             throw new RuntimeException("A conexão com o banco falhou");

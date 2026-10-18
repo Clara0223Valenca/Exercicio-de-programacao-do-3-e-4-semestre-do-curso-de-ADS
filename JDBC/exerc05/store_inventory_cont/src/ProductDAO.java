@@ -107,4 +107,97 @@ public class ProductDAO {
 
         }
     }
+
+    //methods for the report
+
+    public void readAll(){
+        ArrayList<String> listProducts = new ArrayList<>();
+        String sql = "SELECT * FROM product";
+
+        try {
+            Connection con = connectionDB.connect();
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet result = ps.executeQuery();
+
+            // Pega o nome das colunas
+            java.sql.ResultSetMetaData metaData = result.getMetaData();
+            String header = metaData.getColumnName(1) + "," + 
+                        metaData.getColumnName(2) + "," + 
+                        metaData.getColumnName(3) + "," + 
+                        metaData.getColumnName(4);
+
+
+            while (result.next()) {
+                
+                int id = result.getInt(1);
+                String name = result.getString(2);
+                double price = result.getDouble(3);
+                int quantity = result.getInt(4);
+
+                String format = id + "," + name + "," + price + "," + quantity;
+                
+                listProducts.add(format);
+
+            }
+
+            Report r = new Report();
+            r.fullReport(header, listProducts); 
+
+        } catch (SQLException e) {
+            System.out.println("Falha na leitura do banco.");
+        }
+    }
+
+    //read by quantity
+    public void readByQuantity(int qtt, String operator){
+        ArrayList<String> listProducts = new ArrayList<>();
+        String sql = "";
+
+        if (operator.equals("maior")) {
+
+            sql = "SELECT * FROM product WHERE quantity > ?";
+        } else if (operator.equals("menor")) {
+            
+            sql = "SELECT * FROM product WHERE quantity < ?";
+        } else {
+            
+            System.out.println("Operador inválido");
+            return;
+        }
+
+        try {
+            Connection con = connectionDB.connect();
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setInt(1, qtt);
+
+            ResultSet result = ps.executeQuery();
+
+            // Pega o nome das colunas
+            java.sql.ResultSetMetaData metaData = result.getMetaData();
+            String header = metaData.getColumnName(1) + "," + 
+                        metaData.getColumnName(2) + "," + 
+                        metaData.getColumnName(3) + "," + 
+                        metaData.getColumnName(4);
+
+            while (result.next()) {
+                
+                int id = result.getInt(1);
+                String name = result.getString(2);
+                double price = result.getDouble(3);
+                int quantity = result.getInt(4);
+
+                String format = id + "," + name + "," + price + "," + quantity;
+                
+                listProducts.add(format);
+
+                Report r = new Report();
+                r.reportByQuantity(header, listProducts); 
+        
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Falha na leitura do banco.");
+        }
+    }
 }
