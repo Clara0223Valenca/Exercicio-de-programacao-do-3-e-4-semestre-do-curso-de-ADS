@@ -11,7 +11,7 @@
             "name": "App (JavaFX)",
             "request": "launch",
             "mainClass": "App",
-            "vmArgs": "--module-path C:\\JavaFX\\javafx-sdk-21.0.13\\lib --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path F:\\javafx-sdk-25.0.5\\lib --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }

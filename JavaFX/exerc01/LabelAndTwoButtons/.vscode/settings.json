@@ -3,13 +3,16 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\JavaFX\\javafx-sdk-21.0.13\\lib\\javafx.base.jar",
-        "c:\\JavaFX\\javafx-sdk-21.0.13\\lib\\javafx.controls.jar",
-        "c:\\JavaFX\\javafx-sdk-21.0.13\\lib\\javafx.fxml.jar",
-        "c:\\JavaFX\\javafx-sdk-21.0.13\\lib\\javafx.graphics.jar",
-        "c:\\JavaFX\\javafx-sdk-21.0.13\\lib\\javafx.media.jar",
-        "c:\\JavaFX\\javafx-sdk-21.0.13\\lib\\javafx.swing.jar",
-        "c:\\JavaFX\\javafx-sdk-21.0.13\\lib\\javafx.web.jar",
-        "c:\\JavaFX\\javafx-sdk-21.0.13\\lib\\javafx-swt.jar"
+        "f:\\javafx-sdk-25.0.5\\lib\\javafx.base.jar",
+        "f:\\javafx-sdk-25.0.5\\lib\\javafx.controls.jar",
+        "f:\\javafx-sdk-25.0.5\\lib\\javafx.fxml.jar",
+        "f:\\javafx-sdk-25.0.5\\lib\\javafx.graphics.jar",
+        "f:\\javafx-sdk-25.0.5\\lib\\javafx.media.jar",
+        "f:\\javafx-sdk-25.0.5\\lib\\javafx.swing.jar",
+        "f:\\javafx-sdk-25.0.5\\lib\\javafx.web.jar",
+        "f:\\javafx-sdk-25.0.5\\lib\\javafx-swt.jar",
+        "f:\\javafx-sdk-25.0.5\\lib\\jdk.jsobject.jar",
+        "f:\\javafx-sdk-25.0.5\\lib\\jfx.incubator.input.jar",
+        "f:\\javafx-sdk-25.0.5\\lib\\jfx.incubator.richtext.jar"
     ]
 }
