@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Principal",
+            "request": "launch",
+            "mainClass": "Principal",
+            "projectName": "Tela_a3b05df0"
+        },
+        {
+            "type": "java",
+            "name": "Principal",
+            "request": "launch",
+            "mainClass": "Principal",
+            "projectName": "Tela_a3b05d10",
+            "vmArgs": "--module-path \"C:/caminho/para/javafx-sdk/lib\" --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
